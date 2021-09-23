@@ -1,21 +1,22 @@
-var account = 100;
+// If statements
 
-//bought fuel for car
-account = account - 30;
+var age = 18;
 
-//got some snacks
-account = account - 5;
+if age != 18 {
+    print("You are able to get driver license");
+} else {
+    print("You are too young to get driver license");
+}
 
-// got toothpaste
-account = account - 5;
+var sound = 84;
 
+// if sound is higher than 85 print it is too loud
+// else it is quite safe
 
-/*
- 여러줄 주석은
- 이렇게 작성하는 겁니다
- */
+if sound >= 85 {
+    print("It is too loud")
+} else {
+    print("It is quite safe")
+}
 
-print(45);
-print("Hello World");
-print(account);
 
