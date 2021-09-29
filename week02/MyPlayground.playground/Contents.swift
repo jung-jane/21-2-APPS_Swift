@@ -40,3 +40,11 @@ friends.count;
 friends.remove(at: (friends.count - 1))
 friends
 
+
+for count in 10...50 {
+    print(count);
+}
+
+for friend in friends {
+    print("One of the friends characters is \(friend)");
+}
