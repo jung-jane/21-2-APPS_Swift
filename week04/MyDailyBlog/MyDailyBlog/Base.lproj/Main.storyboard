@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kms-Yu-1Df">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Blog Entries Table View Controller-->
+        <scene sceneID="2Je-NO-mvv">
+            <objects>
+                <tableViewController id="Key-Vf-Sog" customClass="BlogEntriesTableViewController" customModule="MyDailyBlog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LGz-rX-fiq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="P6g-I2-LH5">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P6g-I2-LH5" id="xhy-dh-CFZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Key-Vf-Sog" id="nm4-0T-EA4"/>
+                            <outlet property="delegate" destination="Key-Vf-Sog" id="hez-Kf-2lU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="nLC-1w-yyK">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="compose" id="Uis-KR-b3a">
+                            <connections>
+                                <segue destination="f22-Rw-gip" kind="show" id="T7L-z7-b15"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lgw-lu-GpZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717.39130434782612" y="237.72321428571428"/>
+        </scene>
+        <!--Blog App-->
+        <scene sceneID="4Ts-II-UGw">
+            <objects>
+                <viewController id="f22-Rw-gip" customClass="BlogEntryViewController" customModule="MyDailyBlog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sc5-4Y-na1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="nuG-ej-p6p">
+                                <rect key="frame" x="47" y="113" width="320" height="75"/>
+                            </datePicker>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3FS-E8-j5Y">
+                                <rect key="frame" x="25" y="242" width="364" height="550"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6XN-19-rbj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nuG-ej-p6p" firstAttribute="top" secondItem="6XN-19-rbj" secondAttribute="top" constant="25" id="4v6-2L-rew"/>
+                            <constraint firstItem="3FS-E8-j5Y" firstAttribute="top" secondItem="nuG-ej-p6p" secondAttribute="bottom" constant="25" id="RjK-1D-SPq"/>
+                            <constraint firstItem="6XN-19-rbj" firstAttribute="trailing" secondItem="3FS-E8-j5Y" secondAttribute="trailing" constant="25" id="WB4-Bt-dxT"/>
+                            <constraint firstItem="6XN-19-rbj" firstAttribute="bottom" secondItem="3FS-E8-j5Y" secondAttribute="bottom" constant="25" id="foR-jm-ozM"/>
+                            <constraint firstItem="3FS-E8-j5Y" firstAttribute="leading" secondItem="6XN-19-rbj" secondAttribute="leading" constant="25" id="pWv-hb-zU8"/>
+                            <constraint firstItem="nuG-ej-p6p" firstAttribute="centerX" secondItem="sc5-4Y-na1" secondAttribute="centerX" id="rW3-Y3-7gt"/>
+                            <constraint firstItem="3FS-E8-j5Y" firstAttribute="top" secondItem="nuG-ej-p6p" secondAttribute="bottom" constant="25" id="ujz-iE-48q"/>
+                            <constraint firstItem="3FS-E8-j5Y" firstAttribute="top" secondItem="nuG-ej-p6p" secondAttribute="bottom" constant="25" id="w2j-ub-WcW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Blog App" id="FwE-8J-hdD">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="trash" id="3TA-Ac-CAd">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="blogEntryTextView" destination="3FS-E8-j5Y" id="cXW-ti-rVE"/>
+                        <outlet property="datePicker" destination="nuG-ej-p6p" id="oiA-40-UIL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vtR-7E-mxu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="238"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NH6-Ew-nZC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kms-Yu-1Df" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cjE-Cs-0qO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Key-Vf-Sog" kind="relationship" relationship="rootViewController" id="cyu-63-QBS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xPT-wV-Jsc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-192.75362318840581" y="237.72321428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
